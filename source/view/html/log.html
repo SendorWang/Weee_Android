@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://www.sayweee.cn:8000/ -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+
+<script src="../../script/mui.min.js"></script>
+<link href="../../css/mui.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/common.css" />
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+
+
+<style>
+.new_weixin>a {
+	display: block;
+	color: #fff;
+	max-width: 400px;
+	width: 93%;
+	height: 42px;
+	line-height: 42px;
+	margin: 0 auto;
+	border-color: #5ac64f;
+	border-radius: 20px;
+	background: #2dc100;
+	box-sizing: border-box;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.new_facebook>a {
+	background: #3a5898;
+}
+
+.new_facebook>a {
+	display: block;
+	color: #fff;
+	max-width: 400px;
+	width: 93%;
+	height: 42px;
+	line-height: 42px;
+	margin: 0 auto;
+	border-color: #5ac64f;
+	border-radius: 20px;
+	box-sizing: border-box;
+	margin-top: 25px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+.new_or {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+	overflow: hidden;
+	box-sizing: border-box;
+	margin-top: 25px;
+}
+
+.new_left {
+	float: left;
+}
+
+.new_or-line {
+	width: 40%;
+	border-bottom: #3580b8 dashed 1px;
+	margin-top: 8px;
+	box-sizing: border-box;
+}
+
+.new_or-text {
+	display: inline-block;
+	color: #fff;
+	height: 30px;
+	font-size: 14px;
+	float: left;
+	width: 20%;
+	font-weight: bold;
+	color: #3580b8;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.new_right {
+	float: left;
+}
+
+#new_form
+#new_form, #new_form_sign_up {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.logo input {
+	width: 90%;
+	box-sizing: border-box;
+	display: inline;
+	height: 40px;
+	-webkit-border-radius: 40px;
+	border: 1px #979797 solid;
+	font-size: 15px;
+}
+
+.center {
+	overflow: hidden;
+	max-width: 400px;
+	width: 93%;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+.center, .center-align {
+	text-align: center;
+}
+
+.new_forgetpassword {
+	margin-top: 10px;
+	margin-bottom: 35px;
+}
+
+.new_forgetpassword>a {
+	font-size: 15px;
+	color: #969696;
+}
+
+.center>div {
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#api_home_sign_up, #btn-email-login {
+	background: #2dc100;
+	color: #fff;
+	font-size: 18px !important;
+	border: none !important;
+	width: 200px !important;
+	text-align: center;
+	cursor: pointer;
+	height: 40px;
+	border-radius: 20px;
+}
+
+.content {
+	padding-bottom: 20px;
+}
+
+.facebook {
+	width: 20px;
+	height: 20px;
+	margin-top: 4px;
+}
+
+.aui-toast {
+	background: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	border-radius: 0.25rem;
+	color: #ffffff;
+	position: fixed;
+	z-index: 3;
+	top: 45%;
+	left: 50%;
+	width: 7.5em;
+	min-height: 6em;
+	margin-left: -3.75em;
+	margin-top: -4rem;
+	display: none;
+}
+
+.aui-toast-content {
+	margin: 0 0 0.75rem;
+}
+
+.aui-toast-loading {
+	background-color: #ffffff;
+	border-radius: 100%;
+	margin: 0.75rem 0;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	border: 2px solid #ffffff;
+	border-bottom-color: transparent;
+	height: 2.25rem;
+	width: 2.25rem;
+	background: transparent !important;
+	display: inline-block;
+	-webkit-animation: rotate 1s 0s linear infinite;
+	animation: rotate 1s 0s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+	from {-webkit-transform: rotate(0deg);
+}
+
+to {
+	-webkit-transform: rotate(360deg);
+}
+}
+</style>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<i id="back" class=" mui-icon mui-icon-left-nav mui-pull-left"></i>
+		<h1 class="mui-title login">登陆</h1>
+		<a href="regist.html" onclick="location.href='regist.html'"
+			class="regist   mui-pull-right"
+			style="font-size: 13px; height: 45px; line-height: 45PX; color: #333333;">注册</a>
+	</header>
+
+	<div style="padding-top: 20px">
+		<div class="new_weixin" id="weixin_web_login">
+			<a><span class="mui-icon mui-icon-weixin"></span> 微信登录 </a>
+		</div>
+		<div class="new_facebook otherFacebook" id="facebook_log">
+			<a> <img src="../../image/facebook.png" /> 用 Facebook 登 录
+			</a>
+		</div>
+
+	</div>
+
+	<div class="new_or">
+		<div class="new_or-line new_left"></div>
+		<div class="new_or-text">或</div>
+		<div class="new_or-line new_right"></div>
+	</div>
+
+	<div class="form-group required">
+		<div class="logo" style='margin-left: 10%'>
+			<input type="email" class="form-control" id="email" name="email"
+				required="required" value="" placeholder="电子邮箱">
+		</div>
+	</div>
+
+	<div class="form-group required">
+		<div class="logo" style='margin-left: 10%'>
+			<input type="password" maxlength="20" class="form-control" id="psd"
+				name="psd" required="required" value="" placeholder="登录密码(长度6-x位)">
+		</div>
+
+		<div class="erromase"></div>
+
+		<div class="center">
+			<div class="new_forgetpassword">
+				<a>忘记密码?</a>
+			</div>
+		</div>
+
+
+
+		<div class="center">
+			<input type="hidden" name="redirecturl" value="">
+			<button id="btn-email-login" type="button" value="">登录</button>
+		</div>
+
+
+
+	</div>
+
+	<div class="aui-toast" style=""; margin-top: -64px;">
+		<div class="aui-toast-loading"></div>
+		<div class="aui-toast-content">Loading</div>
+	</div>
+
+</body>
+</html>
+<script src="../../script/zepto.min.js"></script>
+<script type="application/javascript">
+	
+    document.getElementsByTagName('body')[0].style.height = window.screen.availHeight+'px';  
+   
+			//deviceone相关的调用都需要放在onDeviceOneLoaded回调函数里，类似JQuery的ready方法
+		    window.onDeviceOneLoaded = function() {
+		   							
+				
+		    	//alert(location.href);
+		        // sm对象的获取和在ui.js里获取没有差别
+		        var app = sm("do_App");
+		        var do_Page = sm("do_Page");
+				var nf = sm("do_Notification");
+				var we = sm("do_TencentWX");
+				var do_ex=sm("do_External");
+				var do_Global=sm("do_Global");
+				var deviceone = require("deviceone");
+				var http=mm("do_Http");
+				var cache=sm("do_DataCache");
+				var fb = sm("M0889_FBLogin");
+								
+				do_Page.fire("bottom_hide");
+				var mask = mui.createMask(function(){				
+					$('.aui-toast').hide();					
+				});
+						
+				do_Page.fire("set_webviw_auto");
+				
+				do_Page.on("result", function(data) {
+				    if (data){
+				    
+				    do_Page.fire("change_url",data);
+				    do_Page.fire("bottom_show");
+				    }
+				});
+				
+				if(do_Global.getMemory("language")=="en"){
+					$('.login').text("Log in");
+					$('.regist').text("Sign up");
+					$('#weixin_web_login a').text(" Log in with WeChat ");
+					$('#facebook_log a').text(" Continue with Facebook ");
+					$('.new_or-text').text("or");
+					$("#email").attr("placeholder","Email");
+					$("#psd").attr("placeholder","Password");
+					$('.new_forgetpassword a').text('Forgot your password?');//Log in
+					$('#btn-email-login').text('Log in');
+				}
+			
+				$('.new_forgetpassword').click(function(){
+					do_Page.fire("set_webviw");
+					location.href=do_Global.getMemory("wurl")+"/me/forgot_password";
+					do_Page.fire("bottom_show");
+				});			
+				
+				
+						mui("body").on('tap',"#btn-email-login",function(){
+						
+						var email=document.querySelector('#email').value;
+						var psd=document.querySelector("#psd").value;
+						/* document.querySelector('#email').blur();
+						document.querySelector("#psd").blur(); */
+						 
+						 var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+						 
+						 if(!re.test(email)){
+							 
+							var toast=do_Global.setMemory("language")=="en"?"Please enter the correct email":"请输入正确的email";
+						 	mui.toast(toast);
+						 	return;
+						 }
+						 
+						 if(psd.length<1){
+							 var toast=do_Global.setMemory("language")=="en"?"Please enter the correct password":"密码不能为空";
+							 mui.toast(toast);
+						 	return;
+						 }
+						 $('.aui-toast').show();
+						 mask.show();
+						 var data="email="+email+"&password="+psd;
+						 log(do_Global.getMemory("surl")+"/login/api_login_with_email",data,1);
+					});
+				 		
+				
+						 
+					function  log(url,data,pares){
+						
+						http.method = "POST";// GET | POST
+						http.timeout = 30000; // 超时时间 : 单位 毫秒
+						http.contentType = "application/x-www-form-urlencoded"; // Content-Type
+						http.url = url;//"https://www.sayweee.cn/login/api_login_with_email"; // 请求的 URL
+						http.body = data;
+						deviceone.print(http.body);
+						cache.removeAll();
+						/**
+						 * 请求成功
+						 
+						 {"result":true,"message":null,"object":{"token":"nNc1mBRPSU--FzS6JTJEsg","openid":"oD4evjkK3KR98uC3Fr3a8E2QgIoI","refresh_token":"uEbLABhRn-kae-bw5t6GQvniXqoICkeZhREVKZwUySMArXjPwskXeixO97R0CclX3IB-HDnRil21bFfTxuxr9NE5tWjQrRpxlRUq-FZAU5Q","user_id":"73966","language":"zh-Hans"}}
+						 */
+						 var flg=false;
+						http.on("success", function(data) {
+							if(data.result==true){
+								
+								do_Global.setMemory("language", data.object.language);
+								deviceone.print(JSON.stringify(data));
+								deviceone.print(cache.loadData("token"));
+								if(pares==1){
+									var email=document.querySelector('#email').value;
+									var psd=document.querySelector("#psd").value;
+									cache.saveData("token","{type:'"+pares+"',email:'"+email+"',passworld:'"+psd+"'}");
+									deviceone.print(cache.loadData("token"));
+								}
+								if(pares==2){
+									
+									cache.saveData("token","{type:'"+pares+"',refresh_token:'"+data.object.refresh_token+"',openid:'"+data.object.openid+"'}");
+								}
+							
+								var url =do_Global.getMemory("wurl")+"/login/token?weee_token="+data.object.token+"&redirect_url="+do_Global.getMemory("back_url");
+								do_Page.fire("bottom_show");
+								deviceone.print(url);
+								do_Page.fire("set_webviw");
+								location.href = url;
+							}
+							else{
+								if(flg)return;
+							
+								nf.alert(data.message);
+								flg=true;
+								//$('.erromase').html(data);
+							}
+						});
+
+						/**
+						 * 请求失败
+						 */
+						http.on("fail", function(data) {
+						    nf.alert("request fail");
+						});
+						
+						
+						http.request();
+						
+					}
+			
+						
+					mui("body").on('tap',"#back",function(){
+						
+						do_Page.fire("bottom_show");
+						do_Page.fire("back_url");
+						do_Page.fire("set_webviw");
+						
+					});
+						
+			
+				 	
+				 	$("#weixin_web_login").click(function(){
+				 	
+				 		weixinlog();
+				 		
+				 	});
+				 	
+				 	function weixinlog(){
+				 		$('.aui-toast').show();
+				 		mask.show();
+				 	
+				 		  we.login({appId:"wx42d88765c71af904"}, function(data, e){
+				 		        
+				 		        //返回的数据code为0表示用户同意，为-2表示用户取消，为-4表示用户拒绝授权
+				 		     
+				 			   deviceone.print(JSON.stringify(data));
+				 			   if(data.errCode==0){
+				 				  var data="code="+data.code;
+				 				  log(do_Global.getMemory("surl")+"/login/api_login_with_wx_app_code",data,2);
+				 			   }
+				 			   else{
+				 				   nf.toast("取消登录");
+				 				   mask.close();
+				 				   $('.aui-toast').hide();
+				 			   }	 			   
+				 			   
+				 		    });
+				 	}
+					
+				 	
+				
+				 	
+				 	$("#facebook_log").on("touchend",function(){
+				 		
+				 		fb.login("819364218109017");//785695564901766
+				 		$('.aui-toast').show();
+				 		mask.show();
+				 		//app.openPage("source://view/facebook_log.ui","","slide_r2l"); 
+				 	});
+					
+				 	
+				 	fb.on("fbresult", function(data) {
+				 		
+				 		deviceone.print(data);
+				 		var reson=data;
+				 		//fclog(reson);
+				 
+				 		http.method = "POST";// GET | POST
+						http.timeout = 30000; // 超时时间 : 单位 毫秒
+						http.contentType = ""; // Content-Type
+						http.url =do_Global.getMemory("surl")+"/login/api_login_with_fb_user_info";//"https://www.sayweee.cn/login/api_login_with_email"; // 请求的 URL
+					
+						http.body = "user_info="+JSON.stringify(reson);
+						deviceone.print(http.body);
+						/**
+						 * 请求成功
+						 */
+					
+						http.on("success", function(data) {
+							
+							
+							 if(data.result==true){
+								
+								do_Global.setMemory("language", data.object.language);
+								deviceone.print(JSON.stringify(data));
+								cache.saveData("token",data.object.token);
+							
+								var url =do_Global.getMemory("wurl")+"/login/token?weee_token="+data.object.token+"&redirect_url="+do_Global.getMemory("back_url");
+								do_Page.fire("bottom_show");
+								deviceone.print(url);
+								do_Page.fire("set_webviw");
+								location.href = url;
+							}
+							else{
+								$('.aui-toast').hide();
+								nf.alert(data.message);
+								$('.erromase').html(data);
+							} 
+						});
+
+						/**
+						 * 请求失败
+						 */
+						http.on("fail", function(data) {
+						    nf.alert("request fail");
+						});
+						
+						
+						http.request();
+					});
+					
+					
+					
+					
+					
+					
+					
+						
+		    }
+	
+			
+	
+	
+		
+		
+	
+</script>

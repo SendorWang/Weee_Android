@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://www.sayweee.cn:8000/ -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="../../script/mui.min.js"></script>
+<link href="../../css/mui.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/common.css" />
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+
+
+<style>
+body {
+	height: 100%;
+	background: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+.new_or {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+	overflow: hidden;
+	box-sizing: border-box;
+	margin-top: 25px;
+	color: #3AA63B;
+}
+
+.new_left {
+	float: left;
+}
+
+.new_or-line {
+	width: 40%;
+	border-bottom: #3580b8 dashed 1px;
+	margin-top: 8px;
+	box-sizing: border-box;
+}
+
+.new_or-text {
+	display: inline-block;
+	color: #fff;
+	height: 30px;
+	font-size: 14px;
+	float: left;
+	width: 20%;
+	font-weight: bold;
+	color: #3580b8;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.new_right {
+	float: left;
+}
+
+#new_form
+#new_form, #new_form_sign_up {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.logo input {
+	width: 90%;
+	box-sizing: border-box;
+	display: inline;
+	height: 40px;
+	-webkit-border-radius: 40px;
+	border: 1px #979797 solid;
+	margin-left: 5%;
+	font-size: 15px;
+}
+
+.center {
+	overflow: hidden;
+	max-width: 400px;
+	width: 93%;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+.center, .center-align {
+	text-align: center;
+}
+
+.center>div {
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#api_home_sign_up, #btn-email-login {
+	background: #2dc100;
+	color: #fff;
+	font-size: 18px !important;
+	border: none !important;
+	width: 200px !important;
+	text-align: center;
+	cursor: pointer;
+	height: 40px;
+	border-radius: 20px;
+}
+
+.facebook {
+	width: 20px;
+	height: 20px;
+	margin-top: 4px;
+}
+</style>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<i onclick='history.back(-1)'
+			class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
+		<h1 class="mui-title">注册</h1>
+		<a class="mui-action-back mui-icon mui-icon-right-nav mui-pull-right"
+			style="font-size: 13px; height: 28px; line-height: 28PX; color: #333333;">登陆</a>
+	</header>
+
+
+
+		<div class="new_or">欢迎新用户!</div>
+
+		<div class="form-group required">
+			<div class="logo">
+				<input type="email" class="form-control" id="email" name="email"
+					required="required" value="" placeholder="电子邮箱">
+			</div>
+		</div>
+
+		<div class="form-group required">
+			<div class="logo">
+				<input type="password" maxlength="20" class="form-control" id="psd"
+					name="psd" required="required" value="" placeholder="注册密码(长度6-x位)">
+			</div>
+
+			<div class="msg"></div>
+
+			<div class="center">
+				<input type="hidden" name="redirecturl" value="">
+				<button id="btn-email-login" type="button" value="">注册</button>
+			</div>
+
+
+
+		</div>
+</body>
+</html>
+<script src="../../script/zepto.min.js"></script>
+<script>
+	
+	
+
+window.onDeviceOneLoaded = function() {
+		 var app = sm("do_App");
+	        var do_Page = sm("do_Page");
+			var nf = sm("do_Notification");
+			var do_Global=sm("do_Global");
+			var deviceone = require("deviceone");
+			var http=mm("do_Http");
+			var cache=sm("do_DataCache");
+			if(do_Global.getMemory("language")=="en"){
+				$('.mui-title').text("Sign up");
+				$('.mui-bar mui-bar-nav a').text("Log in");
+				
+				
+				$("#email").attr("placeholder","Email");
+				$("#psd").attr("placeholder","Create Password");
+				$('#save_button').text('Sign up');
+			}
+			
+			
+		mui("body").on('tap',"#btn-email-login",function(){
+			
+			var email=document.querySelector('#email').value;
+			var psd=document.querySelector("#psd").value;
+			
+			 var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			 
+			 if(!re.test(email)){
+			 	mui.toast("请输入正确的email");
+			 	return;
+			 }
+			 
+			 if(psd.length<6){
+			 	mui.toast("请输入正确的密码");
+			 	return;
+			 }
+			 regist(email,psd);
+		});
+		
+		
+		function  regist(email,psd){
+					
+					http.method = "POST";// GET | POST
+					http.timeout = 30000; // 超时时间 : 单位 毫秒
+					http.contentType = "application/x-www-form-urlencoded"; // Content-Type
+					http.url = do_Global.getMemory("surl")+"/login/api_app_sign_up"//"https://www.sayweee.cn/login/api_login_with_email"; // 请求的 URL
+					//http.body={"email":"234273537@qq.com","password":"1q2w3e4r"};
+					//{"result":true,"message":null,"object":{"token":"wSMbydQzRuCfTUNEd1643g","user_id":"69075","language":"zh-Hans"}}
+					http.body = "email="+email+"&password="+psd;
+					deviceone.print(http.body);						
+					/**
+					 * 请求成功
+					 */
+		
+					http.on("result", function(data) {
+						var json_str=eval("("+data.data+")");
+						
+						if(json_str.result==true){
+							
+							
+							do_Global.setMemory("language", json_str.object.language);
+							deviceone.print(JSON.stringify(data));
+							cache.saveData("token",json_str.object.token);
+							var url =do_Global.getMemory("wurl")+"/login/token?weee_token="+json_str.object.token+"&redirect_url="+do_Global.getMemory("back_url");
+							do_Page.fire("bottom_show");
+							deviceone.print(url);
+							do_Page.fire("set_webviw");
+							location.href = url;
+					
+						}
+						else{
+						  
+							deviceone.print(JSON.stringify(json_str.message));
+							
+							nf.alert(json_str.message);
+							
+						}
+					});
+
+					/**
+					 * 请求失败
+					 */
+					http.on("fail", function(data) {
+					    nf.alert("Erro");
+					});
+					
+					
+					http.request();
+					
+				}
+		
+		
+	}
+
+				
+			
+		
+		
+			
+
+
+	
+</script>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://www.sayweee.cn:8000/ -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="../../script/mui.min.js"></script>
+<link href="http://cdn.staticfile.org/mui/2.4.0/css/mui.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet" href="css/common.css" />
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+
+
+<style>
+a {
+	text-decoration: none;
+}
+
+.new_or {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+	overflow: hidden;
+	box-sizing: border-box;
+	margin-top: 25px;
+	color: #3AA63B;
+}
+
+.new_left {
+	float: left;
+}
+
+.new_or-line {
+	width: 40%;
+	border-bottom: #3580b8 dashed 1px;
+	margin-top: 8px;
+	box-sizing: border-box;
+}
+
+.new_or-text {
+	display: inline-block;
+	color: #fff;
+	height: 30px;
+	font-size: 14px;
+	float: left;
+	width: 20%;
+	font-weight: bold;
+	color: #3580b8;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.new_right {
+	float: left;
+}
+
+#new_form
+#new_form, #new_form_sign_up {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.center>div {
+	text-align: center;
+	box-sizing: border-box;
+}
+</style>
+
+</head>
+<body>
+
+
+	<div class="mui-content">
+
+
+
+
+
+
+
+
+		<div class="center">
+			<input type="hidden" name="redirecturl" value="">
+			<button id="btn-email-login" type="button" value="">选择图片</button>
+		</div>
+
+		<div class="center" id="result">
+
+
+			<img src="../../image/main.png" alt="" />
+		</div>
+
+
+
+	</div>
+
+</body>
+</html>
+
+<script>
+
+
+		
+window.onDeviceOneLoaded = function() {
+	var do_Page = sm("do_Page");
+	var result= document.getElementById("result");
+	mui("body").on('tap',"#btn-email-login",function(){
+		/*chose_img.select({maxCount:1, width:"", height:"", quality:100, iscut:true}, function(data, e) {
+		    deviceone.print(data[0]);
+		   
+		    Alg.base64("encode","file",data[0], function(data, e) {
+		    	 deviceone.print(data);
+		    	 result.innerHTML = '<img src="data:image/png;base64,'+data+'" alt=""/>'; 
+		    });		    
+		});		*/
+		var data={length:"123",temp_folder:"true"};
+		do_Page.fire("up_img",data);
+		//上传返回回调
+		do_Page.on("up_img_res",function(data){
+			alert(JSON.stringify(data));
+		});
+		/*popbottomf.on("popbottomf",function(data){
+			switch(parseInt(data)){
+			case 0:
+				nf.alert("点击相机");
+				break;
+			case 1:
+				nf.alert("点击相册");
+				break;
+			}
+		});*/
+		
+		 
+	});		
+}
+		
+	
+		
+		
+		/*	mui("body").on('tap',"#btn-email-login",function(){
+			
+			var email=document.querySelector('#email').value;
+			var psd=document.querySelector("#psd").value;
+			
+			
+			 var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			 
+			 if(!re.test(email)){
+			 	mui.toast("请输入正确的email");
+			 	return;
+			 }
+			 
+			 if(psd.length<6){
+			 	mui.toast("请输入正确的密码");
+			 	return;
+			 }
+			 
+			 
+		});		*/
+
+
+	
+</script>
