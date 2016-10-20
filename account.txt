@@ -1,9 +1,9 @@
-账号 xizuming@satweee.com
-密码 123456
+账号: xizuming@satweee.com
+密码: 2buJbTQaYN
 应用ID: ceb56028-517f-4e9d-aac6-a209d8bac087
 
-账号 234273537@qq.com
-密码 1q2w3e4r5t2016
+账号: 234273537@qq.com
+密码: 1q2w3e4r5t2016
 应用ID: ec853607-efa2-4d3c-888e-0e5a016f5db1
 
 备注：应用ID 在工程的app.doproj中修改
