@@ -291,8 +291,8 @@ to {
 				var deviceone = require("deviceone");
 				var http=mm("do_Http");
 				var cache=sm("do_DataCache");
-				var fb = sm("M0889_FBLogin");
-								
+				//var fb = sm("M2981_FBLogin");
+				//var fb = sm("M0889_FBLogin");				
 				do_Page.fire("bottom_hide");
 				var mask = mui.createMask(function(){				
 					$('.aui-toast').hide();					
@@ -459,14 +459,14 @@ to {
 				 	
 				 	$("#facebook_log").on("touchend",function(){
 				 		
-				 		fb.login("819364218109017");//785695564901766
+				 		//fb.login("819364218109017");//785695564901766
 				 		$('.aui-toast').show();
 				 		mask.show();
 				 		//app.openPage("source://view/facebook_log.ui","","slide_r2l"); 
 				 	});
 					
 				 	
-				 	fb.on("fbresult", function(data) {
+				 	/*fb.on("fbresult", function(data) {
 				 		
 				 		deviceone.print(data);
 				 		var reson=data;
@@ -483,7 +483,7 @@ to {
 						 * 请求成功
 						 */
 					
-						http.on("success", function(data) {
+						/*http.on("success", function(data) {
 							
 							
 							 if(data.result==true){
@@ -508,14 +508,14 @@ to {
 						/**
 						 * 请求失败
 						 */
-						http.on("fail", function(data) {
+					/*	http.on("fail", function(data) {
 						    nf.alert("request fail");
 						});
 						
 						
 						http.request();
 					});
-					
+					*/
 					
 					
 					

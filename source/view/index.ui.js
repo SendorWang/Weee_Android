@@ -3,7 +3,7 @@
  * @Timestamp : 2016-08-08
  */
 //引入组件库
-var do_Notification = sm("do_Notification");
+
 var do_Global = sm("do_Global");
 var do_Page = sm("do_Page");
 var do_App=sm("do_App");
@@ -479,7 +479,7 @@ do_Page.on("back", function(){
     	do_Global.exit();
     	
     } else {
-    	do_Notification.toast(toast);
+    	nf.toast(toast);
         canBack = true;
         delay3.start();
         //do_Page.back();

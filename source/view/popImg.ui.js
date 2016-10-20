@@ -113,10 +113,10 @@ btnAlbum.on("touch","",300,function(){
 
 
 
-
+var flag1=false;
 
 function  up_img(data){
-	
+	if(flag1)return;
 	http.method = "POST";// GET | POST
 	http.timeout = 30000; // 超时时间 : 单位 毫秒
 	http.contentType = "application/x-www-form-urlencoded"; // Content-Type
@@ -127,7 +127,10 @@ function  up_img(data){
 	/**
 	 * 请求成功
 	 */
+	
 	var flag=false;
+	var flag2=false;
+	var flag3=false;
 	//deviceone.print(http.getAddress());
 	http.on("success", function(data) {
 		
@@ -141,7 +144,9 @@ function  up_img(data){
 		
 		}
 		else{
+			if(flag2)return;
 			nf.alert(data.message);
+			flag2=true;
 		}
 	});
 
@@ -149,11 +154,13 @@ function  up_img(data){
 	 * 请求失败
 	 */
 	http.on("fail", function(data) {
+		if(flag3)return;
 	    nf.alert("Erro");
-	});
+	    flag3=true;
+	    });
 	
-	http.request();
-	
+	http.request();	
+	flag1=true;f
 }
 
 
